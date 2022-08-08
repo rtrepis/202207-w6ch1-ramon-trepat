@@ -1,9 +1,16 @@
 import { createReducer } from "@reduxjs/toolkit";
+import IToDo from "../models/ItoDo";
 
+const initialState: IToDo[] = [
+  {
+    id: 0,
+    name: "",
+    done: false,
+  },
+];
 
-const inicialState = 
+const toDoReducer = createReducer(initialState, (builder) => {
+  builder.addDefaultCase((state: IToDo[]) => [...state]);
+});
 
-const todoReducer = createReducer(inicialState, (builder) => {
-  builder.addDefaultCase((state:  ) => state)
-})
-
+export default toDoReducer;
