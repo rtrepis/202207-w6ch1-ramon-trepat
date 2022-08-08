@@ -1,12 +1,12 @@
 import { UnknownAction } from "../models/actions";
-import IToDo from "../models/ItoDo";
-import toDoReducer from "./toDo.reduce";
+import ITask from "../models/ITask";
+import taskReducer from "./task.reduce";
 
 describe("Give", () => {
   describe("When", () => {
     test("Then", () => {
       const unknownActionTest: UnknownAction = { type: "nose" };
-      const inicialArray: IToDo[] = [
+      const inicialArray: ITask[] = [
         {
           id: 1,
           name: "Abrir las deptools",
@@ -19,9 +19,9 @@ describe("Give", () => {
         },
       ];
 
-      const expectedListToDo = toDoReducer(inicialArray, unknownActionTest);
+      const expectedListTasks = taskReducer(inicialArray, unknownActionTest);
 
-      expect(expectedListToDo).toStrictEqual(inicialArray);
+      expect(expectedListTasks).toStrictEqual(inicialArray);
     });
   });
 });

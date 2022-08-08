@@ -1,7 +1,7 @@
-interface IToDo {
+interface ITask {
   id: number;
   name: string;
   done: boolean;
 }
 
-export default IToDo;
+export default ITask;

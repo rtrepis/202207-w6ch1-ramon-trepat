@@ -1,4 +1,4 @@
-const dataDoTo = [
+const dataTasks = [
   {
     id: 1,
     name: "Abrir las deptools",
@@ -21,4 +21,4 @@ const dataDoTo = [
   },
 ];
 
-export default dataDoTo;
+export default dataTasks;
