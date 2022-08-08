@@ -1,9 +1,9 @@
 import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
-import toDoReducer from "../reduce/toDo.reduce";
+import taskReducer from "../reduce/toDo.reduce";
 
 export const store = configureStore({
   reducer: {
-    toDo: toDoReducer,
+    toDo: taskReducer,
   },
 });
 
