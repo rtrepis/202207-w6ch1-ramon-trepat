@@ -1,6 +1,6 @@
 import { UnknownAction } from "../models/actions";
 import ITask from "../models/ITask";
-import taskReducer from "./toDo.reduce";
+import taskReducer from "./task.reduce";
 
 describe("Give", () => {
   describe("When", () => {
