@@ -20,23 +20,28 @@ const List = (): JSX.Element => {
   const handleDelete = (id: number) => {
     return dispatch(deleteTaskActionCreator(id));
   };
+
   return (
     <>
       <ListStyled>
-        {listTasks.map((task) => (
-          <div key={task.id} className="item">
-            <div className="item-task">
-              <div className="item-task__id">{task.id}</div>
-              <div className="item-task__check">
-                <input type="checkbox" className="item-task__chec" />
+        <ul>
+          {listTasks.map((task) => (
+            <li key={task.id} className="rest">
+              <div className="item">
+                <div className="item-task">
+                  <div className="item-task__id">{task.id}</div>
+                  <div className="item-task__check">
+                    <input type="checkbox" className="item-task__chec" />
+                  </div>
+                  <div className="item__name">{task.name}</div>
+                </div>
+                <div className="item-actions">
+                  <button onClick={() => handleDelete(task.id)}>Delete</button>
+                </div>
               </div>
-              <div className="item__name">{task.name}</div>
-            </div>
-            <div className="item-actions">
-              <button onClick={() => handleDelete(task.id)}>Delete</button>
-            </div>
-          </div>
-        ))}
+            </li>
+          ))}
+        </ul>
       </ListStyled>
     </>
   );
