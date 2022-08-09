@@ -5,8 +5,10 @@ import dataTasks from "../../../../Data/dataTasks";
 import ITask from "../../models/ITask";
 import {
   createTaskActionCreator,
+  deleteTaskActionCreator,
   loadTaskActionCreator,
 } from "../../reducer/actionCreators";
+import { ListStyled } from "./ListStyled";
 
 const newTask: ITask = { id: 2, name: "taska nova", isDone: true };
 
@@ -22,27 +24,30 @@ const List = (): JSX.Element => {
   const handleAdd = () => {
     dispatch(createTaskActionCreator(newTask));
   };
-  const handleModiy = () => {};
-  const handleDelete = () => {};
 
+  const handleModiy = () => {};
+
+  const handleDelete = (id: number) => {
+    return dispatch(deleteTaskActionCreator(id));
+  };
   return (
     <>
-      <ul>
+      <ListStyled>
         {listTasks.map((task) => (
           <div key={task.id} className="item">
-            <div className="item__id">{task.id}</div>
-            <div className="item__check">
-              <input type="checkbox" />
+            <div className="item-task">
+              <div className="item-task__id">{task.id}</div>
+              <div className="item-task__check">
+                <input type="checkbox" className="item-task__chec" />
+              </div>
+              <div className="item__name">{task.name}</div>
             </div>
-            <div className="item__name">{task.name}</div>
+            <div className="item-actions">
+              <button onClick={() => handleDelete(task.id)}>Delete</button>
+            </div>
           </div>
         ))}
-      </ul>
-      <div>
-        <button onClick={handleAdd}>Add</button>
-        <button onClick={handleModiy}>Modify</button>
-        <button onClick={handleDelete}>Add</button>
-      </div>
+      </ListStyled>
     </>
   );
 };
