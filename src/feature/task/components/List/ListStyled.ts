@@ -3,6 +3,9 @@ import styled from "styled-components";
 export const ListStyled = styled.div`
   text-align: -webkit-center;
 
+  li {
+    list-style: none;
+  }
   .item {
     display: flex;
     padding: 5px;
