@@ -1,6 +1,19 @@
 import { createAction } from "@reduxjs/toolkit";
+import { actionTypes } from "../models/actionTypes";
 import ITask from "../models/ITask";
 
-const readLoadTaskActionCreator = createAction<ITask[]>("readLoadTask");
+export const loadTaskActionCreator = createAction<ITask[]>(
+  actionTypes.taskLoad
+);
 
-export default readLoadTaskActionCreator;
+export const createTaskActionCreator = createAction<ITask>(
+  actionTypes.taskCreate
+);
+
+export const updateTaskActionCreator = createAction<Partial<ITask>>(
+  actionTypes.taskUpdate
+);
+
+export const deleteTaskActionCreator = createAction<ITask["id"]>(
+  actionTypes.taskDelete
+);
