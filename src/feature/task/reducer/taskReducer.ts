@@ -5,7 +5,7 @@ import {
   deleteTaskActionCreator,
   loadTaskActionCreator,
   updateTaskActionCreator,
-} from "../store/actionCreators";
+} from "./actionCreators";
 
 const initialState: ITask[] = [
   {

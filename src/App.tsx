@@ -1,6 +1,5 @@
 import React from "react";
-import "./App.css";
-import List from "./components/List/List";
+import List from "./feature/task/components/List/List";
 
 const App = () => {
   return (
