@@ -1,5 +1,5 @@
 import { createAction } from "@reduxjs/toolkit";
-import { actionTypes } from "../models/actionTypes";
+import { actionTypes } from "./actionTypes";
 import ITask from "../models/ITask";
 
 export const loadTaskActionCreator = createAction<ITask[]>(
