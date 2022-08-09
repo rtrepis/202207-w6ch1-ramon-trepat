@@ -29,11 +29,13 @@ const List = (): JSX.Element => {
     <>
       <ul>
         {listTasks.map((task) => (
-          <li key={task.id}>
-            <span className="bold">id:</span> {task.id}{" "}
-            <span className="bold">name:</span> {task.name}{" "}
-            <span className="bold">done:</span> <input type="checkbox" />
-          </li>
+          <div key={task.id} className="item">
+            <div className="item__id">{task.id}</div>
+            <div className="item__check">
+              <input type="checkbox" />
+            </div>
+            <div className="item__name">{task.name}</div>
+          </div>
         ))}
       </ul>
       <div>
