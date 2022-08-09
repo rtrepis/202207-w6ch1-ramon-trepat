@@ -2,15 +2,11 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../../../app/store";
 import dataTasks from "../../../../Data/dataTasks";
-import ITask from "../../models/ITask";
 import {
-  createTaskActionCreator,
   deleteTaskActionCreator,
   loadTaskActionCreator,
 } from "../../reducer/actionCreators";
 import { ListStyled } from "./ListStyled";
-
-const newTask: ITask = { id: 2, name: "taska nova", isDone: true };
 
 const List = (): JSX.Element => {
   const listTasks = useSelector((state: RootState) => state.task);
@@ -20,12 +16,6 @@ const List = (): JSX.Element => {
   useEffect(() => {
     dispatch(loadTaskActionCreator(dataTasks));
   }, [dispatch]);
-
-  const handleAdd = () => {
-    dispatch(createTaskActionCreator(newTask));
-  };
-
-  const handleModiy = () => {};
 
   const handleDelete = (id: number) => {
     return dispatch(deleteTaskActionCreator(id));
