@@ -1,7 +1,7 @@
 interface ITask {
   id: number;
   name: string;
-  done: boolean;
+  isDone: boolean;
 }
 
 export default ITask;
